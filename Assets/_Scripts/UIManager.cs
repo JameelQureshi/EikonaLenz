@@ -11,7 +11,6 @@ public class UIManager : MonoBehaviour
     public GameObject ModelSelectionPanel;
     public GameObject AnimationSelectionPanel;
     private int NewIndex;
-    public GameObject[] Models;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +36,7 @@ public class UIManager : MonoBehaviour
     public void ChooseOpertion()
     {
         operationselectionPanel.SetActive(false);
-        SceneManager.LoadScene(1);
+        ModelSelectionPanel.SetActive(true);
     }
     public void BackToModelselection()
     {
@@ -53,6 +52,6 @@ public class UIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2.0f);
         LoadingPanel.SetActive(false);
-        ModelSelectionPanel.SetActive(true);
+        operationselectionPanel.SetActive(true);
     }
 }
