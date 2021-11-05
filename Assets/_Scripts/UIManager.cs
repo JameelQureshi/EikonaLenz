@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
     {
         placeableindex = NewIndex + index;
         AnimationSelectionPanel.SetActive(false);
-        operationselectionPanel.SetActive(true);
+        SceneManager.LoadScene(1);
         print(placeableindex);
     }
     public void ChooseOpertion()
@@ -45,8 +45,8 @@ public class UIManager : MonoBehaviour
     }
     public void BackToAnimationSelection()
     {
-        operationselectionPanel.SetActive(false);
-        AnimationSelectionPanel.SetActive(true);
+        operationselectionPanel.SetActive(true);
+        AnimationSelectionPanel.SetActive(false);
     }
     IEnumerator Loading()
     {
