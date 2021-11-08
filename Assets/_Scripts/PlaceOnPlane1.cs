@@ -24,12 +24,12 @@ namespace UnityEngine.XR.ARFoundation.Samples
         [Tooltip("Instantiates this prefab on a plane at the touch location.")]
         GameObject m_PlacedPrefabs;
         public GameObject[] Models;
-        public GameObject TakeImageButton;
         public GameObject Featheredplane;
         public GameObject EnableTrackingButton;
         public GameObject DisableTrackingButton;
         public GameObject Instructions;
         public ARPlaneManager m_ARPlaneManager;
+        public GameObject RecordButton;
         /// <summary>
         /// The prefab to instantiate on touch.
         /// </summary>
@@ -111,10 +111,9 @@ namespace UnityEngine.XR.ARFoundation.Samples
                 {
                     spawnedObject = Instantiate(Models[UIManager.placeableindex], hitPose.position, hitPose.rotation);
                     Handheld.Vibrate();
-                    TakeImageButton.SetActive(true);
                     Instructions.SetActive(false);
                     EnableTrackingButton.SetActive(true);
-                    DisableTrackingButton.SetActive(true);
+                    RecordButton.SetActive(true);
                 }
             }
         }
