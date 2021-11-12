@@ -25,7 +25,9 @@ namespace NatSuite.Examples {
         private CameraInput cameraInput;
         private AudioInput audioInput;
         private AudioSource microphoneSource;
-
+        public GameObject startRecording;
+        public GameObject stopRecording;
+       
         public Canvas canvas;
 
         private IEnumerator Start () {
@@ -54,6 +56,8 @@ namespace NatSuite.Examples {
 
         public void StartRecording () {
             // Start recording
+            startRecording.SetActive(false);
+            stopRecording.SetActive(true);
             var frameRate = 30;
             var sampleRate = recordMicrophone ? AudioSettings.outputSampleRate : 0;
             var channelCount = recordMicrophone ? (int)AudioSettings.speakerMode : 0;
@@ -65,6 +69,8 @@ namespace NatSuite.Examples {
         }
 
         public async void StopRecording () {
+            stopRecording.SetActive(false);
+            startRecording.SetActive(true);
             cameraInput.Dispose();
             var path = await recorder.FinishWriting();
             var sharepayload = new SharePayload();

@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     public GameObject ModelSelectionPanel;
     public GameObject AnimationSelectionPanel;
     private int NewIndex;
+    public static int check;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -33,8 +35,15 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(1);
         print(placeableindex);
     }
-    public void ChooseOpertion()
+    public void Choosepicture()
     {
+        check = 1;
+        operationselectionPanel.SetActive(false);
+        ModelSelectionPanel.SetActive(true);
+    }
+    public void Choosevideo()
+    {
+       
         operationselectionPanel.SetActive(false);
         ModelSelectionPanel.SetActive(true);
     }

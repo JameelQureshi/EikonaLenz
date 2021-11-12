@@ -30,6 +30,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
         public GameObject Instructions;
         public ARPlaneManager m_ARPlaneManager;
         public GameObject RecordButton;
+        public GameObject TakeImageButton;
         /// <summary>
         /// The prefab to instantiate on touch.
         /// </summary>
@@ -113,7 +114,15 @@ namespace UnityEngine.XR.ARFoundation.Samples
                     Handheld.Vibrate();
                     Instructions.SetActive(false);
                     EnableTrackingButton.SetActive(true);
-                    RecordButton.SetActive(true);
+                    if(UIManager.check ==1)
+                    {
+                        TakeImageButton.SetActive(true);
+                    }
+                    else
+                    {
+                        RecordButton.SetActive(true);
+                    }
+                    
                 }
             }
         }
